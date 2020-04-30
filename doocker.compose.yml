@@ -1,0 +1,35 @@
+version: "3.6"
+
+networks:
+  splunknet:
+    driver: bridge
+    attachable: true
+
+volumes:
+  splunk1-var:
+  splunk1-etc:
+
+services:
+  splunk1:
+    networks:
+      splunknet:
+        aliases:
+          - splunk1
+    image: splunk/splunk:latest
+    container_name: splunk1
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=MYUNSAFEPASSWORD
+      - SPLUNK_ENABLE_LISTEN=9997
+      - SPLUNK_LICENSE_URI=/opt/splunk/etc/splunk.lic
+      - SPLUNK_APPS_URL=/opt/splunk/etc/apps_packages/microsoft-teams-messages-publication-addon_106.tgz,/opt/splunk/etc/apps_packages/nutanix-prism-dashboard-for-splunk_200.tgz,/opt/splunk/etc/apps_packages/splunk-machine-learning-toolkit_510.tgz,/opt/splunk/etc/apps_packages/ta-for-nutanix-prism_200.tgz,/opt/splunk/etc/apps_packages/tenable-add-on-for-splunk_321.tgz,/opt/splunk/etc/apps_packages/tenable-app-for-splunk_210.tgz
+      - DEBUG=true
+    ports:
+      - 8000:8000
+      - 8089:8089
+      - 9997:9997
+    volumes:
+      - splunk1-var:/opt/splunk/var
+      - splunk1-etc:/opt/splunk/etc
+    dns:
+      - 8.8.8.8
