@@ -16,7 +16,7 @@ Requirements:
  - docker-compose
 
 This setup comes with pre-installed apps which are used in Solution Center:
- - [Machine Learning Toolkit](https://splunkbase.splunk.com/app/4061)
+ - [Machine Learning Toolkit](https://splunkbase.splunk.com/app/2890/)
  - Nutanix
    - [TA for Prism](https://splunkbase.splunk.com/app/3103/)
    - [Nutanix Prism Dashboard for Splunk](https://splunkbase.splunk.com/app/3102/)
@@ -27,15 +27,15 @@ This setup comes with pre-installed apps which are used in Solution Center:
 
 ### Creating Persistent Data Storage
 
-Once you've got your Docker up and running, you need to create two volumes so your config and indexing data won't 
+Once you've got your Docker up and running, you need to create two volumes so your config and indexing data won't
 vanish with your containers.
 
 Commands to create volumes:
 
 ```
-docker create volume splunk1-var
-docker create volume splunk1-var
-docker volume ls 
+docker volume create splunk1-var
+docker volume create splunk1-etc
+docker volume ls
 docker volume inspect VOLUME-NAME
 ```
 
@@ -89,7 +89,7 @@ For this use docker-compose to build the whole set up and rip it down if necessa
 Follow the steps to verify your all set:
 ```
 docker-compose -v
-ls 
+ls
 ```
 You should have the docker-compose.yml in this working directory to create the Splunk instance.
 

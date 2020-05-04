@@ -23,7 +23,6 @@ services:
       - SPLUNK_ENABLE_LISTEN=9997
       - SPLUNK_LICENSE_URI=/opt/splunk/etc/splunk.lic
       - SPLUNK_APPS_URL=/opt/splunk/etc/apps_packages/microsoft-teams-messages-publication-addon_106.tgz,/opt/splunk/etc/apps_packages/nutanix-prism-dashboard-for-splunk_200.tgz,/opt/splunk/etc/apps_packages/splunk-machine-learning-toolkit_510.tgz,/opt/splunk/etc/apps_packages/ta-for-nutanix-prism_200.tgz,/opt/splunk/etc/apps_packages/tenable-add-on-for-splunk_321.tgz,/opt/splunk/etc/apps_packages/tenable-app-for-splunk_210.tgz
-      - DEBUG=true
     ports:
       - 8000:8000
       - 8089:8089
