@@ -33,8 +33,8 @@ vanish with your containers.
 Commands to create volumes:
 
 ```
-docker volume create splunk1-var
-docker volume create splunk1-etc
+docker volume create splunk_splunk1-etc
+docker volume create splunk_splunk1-var
 docker volume ls
 docker volume inspect VOLUME-NAME
 ```
@@ -109,7 +109,7 @@ Enter your enviroment http://HOST-IP:8000
 Happy Splunking!
 
 
-### Docker DNS Problems FIX
+### Docker - Allow Splunk to communicate outside
 
 Check what interface docker is using, e.g. 'docker0'
 ```
