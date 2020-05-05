@@ -77,7 +77,7 @@ mkdir /var/lib/docker/volumes/splunk_splunk1-etc/_data/app_packages
 Upload the contents of Splunk Add-ons/Apps here:
 
 ```
-ls /var/lib/docker/volumes/splunk_splunk1-etc/_data/app_packages
+ls /var/lib/docker/volumes/splunk_splunk1-etc/_data/apps_packages
 microsoft-teams-messages-publication-addon_106.tgz  splunk-machine-learning-toolkit_510.tgz  tenable-add-on-for-splunk_321.tgz
 nutanix-prism-dashboard-for-splunk_200.tgz          ta-for-nutanix-prism_200.tgz             tenable-app-for-splunk_210.tgz
 ```
