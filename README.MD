@@ -131,7 +131,7 @@ Masquerading allows for docker ingress and egress (this is the juicy bit)
 ```
 sudo firewall-cmd --zone=public --add-masquerade --permanent
 ```
-Optional open required incomming ports (wasn't required in my tests)
+Optional open required incoming ports (wasn't required in my tests)
 ```
 sudo firewall-cmd --zone=public --add-port=443/tcp
 ```
